@@ -8,14 +8,14 @@ class BookCatalog {
     
     public function Add($isbn, $bookName, $author, $publicYear, $publisher) {
         $book = new Book();
-        $book->setISBN = $isbn;
-        $book->setBookName = $bookName;
-        $book->setAuthor = $author;
-        $book->setPublicYear = $publicYear;
-        $book->setpublisher = $publisher;
+        $book->setIsbn($isbn);
+        $book->setBookName($bookName);
+        $book->setAuthor($author);
+        $book->setPublicYear($publicYear);
+        $book->setpublisher($publisher);
         
         $this->bookInCatalog[$isbn] = $book;
-        return $isbn;
+        return $book;
     }
     
     public function isExist($isbn) {

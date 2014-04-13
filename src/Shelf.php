@@ -1,5 +1,7 @@
 <?php
 
+require_once "Book.php";
+
 class Shelf {
     private $bookList = array();
     
@@ -7,15 +9,14 @@ class Shelf {
         return count($this->bookList);
     }
     
-    public function addBook($isdn) {
+    public function addBook(Book $book) {
         
-        array_push($this->bookList, $isdn);
+        $this->bookList[$book->getIsbn()] = $book;
         return $this->numberOfBooks();
     }
     
-    public function isOnShelf($isdn) {
-        $isInArray = in_array($isdn, $this->bookList);
-        return $isInArray;
+    public function isOnShelf($isbn) {
+        return array_key_exists($isbn , $this->bookList);
     }
     
 }

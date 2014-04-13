@@ -10,6 +10,12 @@ class ShelfTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(0, $shelf->numberOfBooks());
     }
     
+    function testAddBookShouldAddNewBookAndReturnNumberOfBooks() {
+        $shelf = new Shelf();
+        $bookCatalog = new BookCatalog();
+        $book = $bookCatalog->add("9780987332103","JUMP START NodeJS","Don Nguyen",2012,"sitepoint");
+        $this->assertEquals(1, $shelf->AddBook($book));
+    }
     function testAddBookShouldAddNewBookToShelf() {
         $shelf = new Shelf();
         $bookCatalog = new BookCatalog();
