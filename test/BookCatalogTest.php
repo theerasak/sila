@@ -18,7 +18,6 @@ class BookCatalogTest extends PHPUnit_Framework_TestCase {
     
     public function testAddNewBookShouldReturnBook() {
         $bookCatalog = new BookCatalog();
-        $book = new Book();
         $book = $bookCatalog->add("9780987332103","JUMP START NodeJS","Don Nguyen",2012,"sitepoint");
         
         $this->assertEquals("9780987332103", $book->getIsbn());

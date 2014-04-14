@@ -19,4 +19,19 @@ class Shelf {
         return array_key_exists($isbn , $this->bookList);
     }
     
+    public function listAllBooks() {
+        return $this->bookList;
+    }
+    
+    public function getBook($isbn) {
+        $book = new Book();
+        if ($this->isOnShelf($isbn)) {
+            $book = $this->bookList[$isbn];
+            return $book;
+        }
+        else {
+            return null;
+        }
+    }
+           
 }
